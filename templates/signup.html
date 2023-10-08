@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/main.css' %}"><link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+      <title>Signup</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Here You are!</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <h1><center>Hey!</center></h1>
+      <h2><center>Signup!</center></h2>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+              <h2>Register Here</h2>
+              {% for message in messages  %}
+              <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                <strong></strong>{{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {% endfor %}
+              <form action="/signup" method="post">{% csrf_token %}
+                <div class="mb-3">
+                  <label for="Username" class="form-label">User Name</label>
+                  <input type="text" class="form-control" name="username" required>
+                 </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" required>
+                 </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password1" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" name="password2" required>
+                 </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <br><p><center>Already Registered? <a href="/">Login</a></center></p>
+              </form>   
+            </div>
+            <div class="col-md-4"> 
+            </div>
+            <div class="col-md-4"> 
+            </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

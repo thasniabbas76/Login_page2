@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    /* CSS styles for medium-sized devices (e.g., tablets) */
+}
+
+@media (max-width: 576px) {
+    /* CSS styles for small devices (e.g., smartphones) */
+}
+
+body{
+    background-image: url('../images/R.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
